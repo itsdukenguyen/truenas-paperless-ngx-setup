@@ -1,19 +1,14 @@
-﻿# TrueNAS Scale - Paperless-ngx Setup Guide
+﻿# TrueNAS SCALE - Paperless-ngx Setup Guide
 
-Comprehensive step-by-step guide for installing and configuring **Paperless-ngx** on **TrueNAS Scale**.
+A detailed step-by-step guide to installing, configuring, and using **Paperless-ngx** on TrueNAS SCALE.
 
-This repository documents my complete setup including:
-- Proper ZFS dataset structure with child datasets
-- Host Path storage configuration
-- Gmail IMAP integration
-- Organizing tax returns (2010–present) and other documents
+## Overview
+Paperless-ngx is a powerful open-source document management system with OCR, tagging, auto-matching, and email ingestion.
 
-## Quick Links
-- [Full Detailed Setup Guide](./SETUP-GUIDE.md)
+## Table of Contents
+- [Full Setup Guide](./SETUP-GUIDE.md)
+- [Best Practices](./docs/best-practices.md)
+- [Troubleshooting](./docs/troubleshooting.md)
 
 ## Screenshots
-See the `datasets/`, `storage-config/`, and `paperless-ui/` folders.
-
----
-
-Originally inspired by my [Vaultwarden Setup](https://github.com/itsdukenguyen/truenas-vaultwarden-setup).
+See the screenshots/ folder for visual walkthroughs.

@@ -1,3 +1,11 @@
-﻿.DS_Store
+﻿# OS
+.DS_Store
 Thumbs.db
+
+# Temporary files
 *.tmp
+*.log
+
+# Large files (optional)
+screenshots/*.tiff
+screenshots/*.psd
