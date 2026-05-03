@@ -1,74 +1,75 @@
 ﻿# Paperless-ngx on TrueNAS SCALE - Complete Setup Guide
 
-## 1. Create ZFS Datasets (Recommended Structure)
+## 1. Create ZFS Datasets
 
-Create a parent dataset and the following child datasets:
+**Recommended Structure** (under your main pool, e.g. `DataPool`):
 
-- DataPool/apps/paperless-ngx (parent)
-- DataPool/apps/paperless-ngx/consume
-- DataPool/apps/paperless-ngx/media
-- DataPool/apps/paperless-ngx/data
-- DataPool/apps/paperless-ngx/postgres-data
-- DataPool/apps/paperless-ngx/trash
+- `DataPool/apps/paperless-ngx` ← Parent
+- `DataPool/apps/paperless-ngx/consume`
+- `DataPool/apps/paperless-ngx/media`
+- `DataPool/apps/paperless-ngx/data`
+- `DataPool/apps/paperless-ngx/postgres-data`
+- `DataPool/apps/paperless-ngx/trash`
 
-**Screenshot:**  
-![Paperless-ngx Dataset Structure](screenshots/01-paperlessngx-dataset-structure.png)
+**Screenshots:**
+- ![Dataset Structure](screenshots/01-paperlessngx-dataset-structure.png)
+- ![Child Datasets](screenshots/03-paperlessngx-child-datasets.png)
 
-**Screenshot:**  
-![Child Datasets](screenshots/03-paperlessngx-child-datasets.png)
+**Tip**: Create datasets with `compression=lz4` and enable snapshots.
 
 ## 2. Install Paperless-ngx App
 
-Go to **Apps** → **Paperless-ngx** → Install.
+1. Go to **Apps** → Available Applications → Search **Paperless-ngx**
+2. Click **Install**
 
-### Storage Configuration
+### Storage Configuration (Critical)
 
-Configure each storage volume as shown:
+Map each volume exactly as shown:
 
-- **Data Storage**: /mnt/DataPool/apps/paperless-ngx/data
-- **Media Storage**: /mnt/DataPool/apps/paperless-ngx/media
-- **Consume Storage**: /mnt/DataPool/apps/paperless-ngx/consume
-- **Trash Storage**: /mnt/DataPool/apps/paperless-ngx/trash
-- **Postgres Data**: /mnt/DataPool/apps/paperless-ngx/postgres-data
+- **Data Storage** → `/mnt/DataPool/apps/paperless-ngx/data`
+- **Media Storage** → `/mnt/DataPool/apps/paperless-ngx/media`
+- **Consume Storage** → `/mnt/DataPool/apps/paperless-ngx/consume`
+- **Trash Storage** → `/mnt/DataPool/apps/paperless-ngx/trash`
+- **Postgres Data** → `/mnt/DataPool/apps/paperless-ngx/postgres-data`
 
 **Screenshots:**
+- [Data Storage](screenshots/02-paperlessngx-storage-config-01.png)
+- [Media Storage](screenshots/02-paperlessngx-storage-config-02.png)
+- [Consume Storage](screenshots/02-paperlessngx-storage-config-03.png)
+- [Trash Storage](screenshots/02-paperlessngx-storage-config-04.png)
+- [Postgres Storage](screenshots/02-paperlessngx-storage-config-05.png)
 
-![Data Storage](screenshots/02-paperlessngx-storage-config-01.png)  
-![Media Storage](screenshots/02-paperlessngx-storage-config-02.png)  
-![Consume Storage](screenshots/02-paperlessngx-storage-config-03.png)  
-![Trash Storage](screenshots/02-paperlessngx-storage-config-04.png)  
-![Postgres Storage](screenshots/02-paperlessngx-storage-config-05.png)
+## 3. Post-Install Configuration
 
-## 3. Initial Configuration in Paperless-ngx
+### Storage Paths
+**Manage → Storage Paths → Create**
 
-### Create Storage Paths
-Go to **Manage** → **Storage Paths** → Create
+Example: Name = `Tax Documents`
 
-**Screenshot:**  
-![Storage Paths List](screenshots/04-paperlessngx-storage-path.png)
+**Screenshot:** ![Storage Paths](screenshots/04-paperlessngx-storage-path.png)
 
-### Create Document Types
-Go to **Manage** → **Document Types** → Create
+### Document Types
+**Manage → Document Types → Create**
 
-**Screenshot:**  
-![Document Types](screenshots/05-paperlessngx-document-type.png)
+Example: Name = `Tax Return`
 
-### Configure Gmail for Email Ingestion
-Go to **Manage** → **Mail** → Add Account
+**Screenshot:** ![Document Types](screenshots/05-paperlessngx-document-type.png)
 
-**Screenshot:**  
-![Gmail IMAP Setup](screenshots/06-paperlessngx-mail-account.png)
+### Gmail Integration
+**Manage → Mail → Add Account**
 
-**Settings used:**
-- IMAP Server: imap.gmail.com
-- IMAP Port: 993
-- IMAP Security: SSL
+- Name: `Gmail`
+- Username: `your.email@gmail.com`
+- IMAP Server: `imap.gmail.com`
+- Port: `993`
+- Security: `SSL`
+- Use **App Password**
 
-## 4. Dashboard After Setup
+**Screenshot:** ![Gmail Setup](screenshots/06-paperlessngx-mail-account.png)
 
-**Screenshot:**  
-![Paperless-ngx Dashboard](screenshots/07-paperlessngx-dashboard.png)
+## 4. Final Dashboard
+![Dashboard](screenshots/07-paperlessngx-dashboard.png)
 
-## 5. First Document Workflow (Tax Returns)
+## 5. Tax Return Workflow (2010–Present)
 
-See detailed workflow in the next sections.
+See [Best Practices](./docs/best-practices.md) for detailed naming and organization strategy.

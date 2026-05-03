@@ -3,33 +3,25 @@
 ![TrueNAS](https://img.shields.io/badge/TrueNAS-SCALE-blue?style=for-the-badge)
 ![Paperless-ngx](https://img.shields.io/badge/Paperless--ngx-v2.20+-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-![GitHub Repo](https://img.shields.io/badge/Repository-Public-brightgreen?style=for-the-badge)
 
-Comprehensive step-by-step guide for installing and optimizing **Paperless-ngx** on **TrueNAS SCALE**.
+> Comprehensive, reproducible guide for installing **Paperless-ngx** on **TrueNAS SCALE** — written for my future self.
 
 ## Overview
-Paperless-ngx is a powerful open-source document management system that uses OCR to digitize, organize, and search your documents.
-
-## Features Covered
-- Proper ZFS dataset structure & permissions
-- Storage configuration (Consume, Media, Postgres, Trash)
-- Storage Paths, Document Types, Tags & Correspondents
-- Gmail IMAP email ingestion
-- Tax return & long-term archival best practices
-- Maintenance & backup strategies
+Paperless-ngx is a powerful self-hosted document management system with OCR, tagging, auto-matching, and email ingestion.
 
 ## Table of Contents
 - [Full Setup Guide](./SETUP-GUIDE.md)
 - [Best Practices](./docs/best-practices.md)
 - [Troubleshooting](./docs/troubleshooting.md)
 
-## Screenshots
-Detailed visual walkthrough available in the [screenshots/](./screenshots/) folder.
+## Prerequisites
+- TrueNAS SCALE (tested on 24.10+)
+- Dedicated storage pool with sufficient space
+- Basic knowledge of ZFS datasets and permissions
 
 ## Quick Start
 1. Create recommended ZFS datasets
-2. Install Paperless-ngx from TrueNAS Apps
-3. Configure Storage Paths and Document Types
-4. Start uploading documents
-
-Made with ❤️ by Duc Nguyen
+2. Install Paperless-ngx via TrueNAS Apps
+3. Configure Storage Paths & Document Types
+4. Set up Gmail IMAP
+5. Start ingesting documents
