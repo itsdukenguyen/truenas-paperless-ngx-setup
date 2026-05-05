@@ -1,4 +1,6 @@
-﻿# TrueNAS SCALE - Paperless-ngx Setup Guide
+﻿![Paperless-ngx on TrueNAS](assets/banner.jpg)
+
+# TrueNAS SCALE - Paperless-ngx Setup Guide
 
 ![TrueNAS](https://img.shields.io/badge/TrueNAS-SCALE-blue?style=for-the-badge)
 ![Paperless-ngx](https://img.shields.io/badge/Paperless--ngx-v2.20+-green?style=for-the-badge)
